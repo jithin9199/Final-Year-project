@@ -1,0 +1,8 @@
+[build]
+builder = "dockerfile"
+
+[deploy]
+startCommand = "cd Frontend && streamlit run --server.port=$PORT --server.address=0.0.0.0 app.py"
+healthcheckPath = "/_stcore/health"
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 5
